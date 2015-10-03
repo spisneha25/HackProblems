@@ -1,9 +1,14 @@
+/*
+Only one half is unsorted when array is rotated, the other must be still in sorted order. 
+*/
+
+
 public class Solution {
     public int search(int[] nums, int target) 
     {
         int lo = 0;
         int hi = nums.length - 1;
-        
+    
         while(lo <= hi)
         {
             int mi = lo + (hi - lo) / 2;
