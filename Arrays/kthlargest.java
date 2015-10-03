@@ -20,7 +20,7 @@ public class Solution {
         return nums[lo];
     }
     
-    public int partition(int[] a, int lo, int hi)
+    private int partition(int[] a, int lo, int hi)
     {
         int p = lo;
         int l = lo + 1, h = hi;
