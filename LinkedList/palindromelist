@@ -1,0 +1,58 @@
+public class Solution {
+    public boolean isPalindrome(ListNode head) 
+    {
+        return palindromeHelper1(head);
+    }
+    
+    private boolean palindromeHelper1(ListNode h)
+    {
+            int l = length(h);
+            ListNode t1 = h, t2 = h;
+            for(int i = 0; t1 != null && i < l/2; i++)
+            {
+                t1 = t1.next;
+            }
+            
+            if(l % 2 != 0)
+                t1 = t1.next;
+            
+            t1 = reversed(t1);
+            
+            while(t1 != null)
+            {
+                //System.out.println(t1.val + " " + t2.val);
+                if(t1.val != t2.val)
+                    return false;
+                t1 = t1.next;
+                t2 = t2.next;
+            }
+            
+            return true;
+    }
+    
+    private ListNode reversed(ListNode h)
+    {
+        ListNode a = h, b = null, c = null;
+        while(a != null)
+        {
+            c = b; 
+            b = a; 
+            a = a.next;
+            b.next = c;
+        }
+        
+        return b;
+    }
+    
+    private int length(ListNode n)
+    {
+        int l = 0;
+        while(n != null)
+        {
+            l++;
+            n = n.next;
+        }
+        
+        return l;
+    }
+}
