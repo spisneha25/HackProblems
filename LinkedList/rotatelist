@@ -1,0 +1,56 @@
+public class Solution 
+{
+    public ListNode rotateRight(ListNode head, int k) 
+    {
+    
+        int n = length(head);
+        
+        if(head == null || k%n == 0 || head.next == null)
+            return head;
+    
+        
+        ListNode t1 = head, t2 = head, prev = null;
+        
+        int i = 0;
+        
+        while(i < k%n)
+        {
+            t1 = t1.next;
+            i++;
+        }
+        
+        System.out.println(t1.val);
+        
+        while(t1 != null)
+        {
+            t1 = t1.next;
+            prev = t2;
+            t2 = t2.next;
+        }
+        
+        prev.next = null;
+        ListNode t = t2;
+        
+        if(t != null)
+        {   
+            while(t.next != null)
+                t = t.next;
+            
+            t.next = head;
+        }
+        
+        return t2;
+    }
+    
+    private int length(ListNode n)
+    {
+        int l = 0;
+        while(n != null)
+        {
+            l++;
+            n = n.next;
+        }
+        
+        return l;
+    }
+}
