@@ -1,4 +1,4 @@
-ublic class Solution {
+public class Solution {
     public List<String> generateParenthesis(int n) 
     {
         List<String> ll = new ArrayList<String>();
