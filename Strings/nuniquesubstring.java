@@ -34,11 +34,6 @@ public class substring
 			        if(uniq == N + 1)
 			        	break;
 			        
-			        if(uniq == 2)
-			        {
-			            ch = j;
-			        }
-			        
 			        map.put(c, j);
 			    }
 			    else if(c == s.charAt(i))
